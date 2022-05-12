@@ -23,6 +23,7 @@ public class MainManager : MonoBehaviour
     void Start()
     {
         const float step = 0.6f;
+        ScoreText.text = GameManager.Instance.playerName + ": Score : " + m_Points;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
         int[] pointCountArray = new [] {1,1,2,2,5,5};
@@ -65,7 +66,7 @@ public class MainManager : MonoBehaviour
     void AddPoint(int point)
     {
         m_Points += point;
-        ScoreText.text = $"Score : {m_Points}";
+        ScoreText.text = GameManager.Instance.playerName + ": Score : " + m_Points;
     }
 
     public void GameOver()
